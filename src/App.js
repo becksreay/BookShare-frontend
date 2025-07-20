@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+// Rebekah Reay - Student ID: K2938309
+
+import "./App.css";
+import "@ionic/react/css/core.css";
+import { setupIonicReact } from "@ionic/react";
+import React from "react";
+import { IonButton } from "@ionic/react";
+import Button from "./components/button/button-component.js";
+import Footer from "./components/footer/footer-component.js";
+
+setupIonicReact();
 
 function App() {
+  function handleClick(event) {
+    console.log("button clicked!", event.target.value);
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Rebekah Reay Student ID: K2938309
-          TM470 Book Share application
-          First commit to GitHub
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>BookShare</h1>
       </header>
+
+      <div className="button-div">
+        <button value="share" onClick={handleClick}>
+          Share a book
+        </button>
+        <button value="find" onClick={handleClick}>
+          Find a book
+        </button>
+      </div>
+
+      <Footer id="footer" />
     </div>
   );
 }
