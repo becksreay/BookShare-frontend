@@ -1,9 +1,11 @@
 /* Rebekah Reay - Student ID: K2938309 */
 
-.button {
+button {
     height: 20vh;
-    width: 40vw;
-    margin: 4%;
-    color: black;
-    background-color: red;
+  width: 40vw;
+  margin: 4%;
+  border-radius: 10px;
+  color: black;
+  font-weight: bold;
+  background-color: #88d0f6;
 }

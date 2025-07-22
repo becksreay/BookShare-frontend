@@ -3,19 +3,7 @@
 import React from "react";
 import "./button-component.css";
 
-export default function Button({ children, value }) {
-  function shareButton(value) {
-    console.log("share button clicked!" + value);
-  }
-
-  // function findButton() {
-  //   console.log("find button clicked!");
-  // }
-
-  return (
-    <button type="button" className="button" onClick={shareButton(value)}>
-      {children}
-    </button>
-  );
+export default function Button({ onClick, name }) {
+  return <button onClick={onClick}>{name}</button>;
 }
 // export default Button;
