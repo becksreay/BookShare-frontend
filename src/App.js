@@ -1,27 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+// Rebekah Reay - Student ID: K2938309
+
+import "./App.css";
+import React from "react";
+import Button from "./components/button/button-component.js";
 
 function App() {
+  function handleClick(event) {
+    console.log("button clicked!", event.target.value);
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Rebekah Reay Student ID: K2938309
-          TM470 Book Share application
-          First commit to GitHub
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>BookShare</h1>
       </header>
+      <div className="button-div">
+        <Button onClick={handleClick} name={"share a book"}></Button>
+        <Button onClick={handleClick} name={"find a book"}></Button>
+      </div>
     </div>
   );
 }
 
 export default App;
+
+// ionic imports and stuff
+// import "@ionic/react/css/core.css";
+// import { setupIonicReact } from "@ionic/react";
+// import { IonButton } from "@ionic/react";
+// import Footer from "./components/footer/footer-component.js";
+// setupIonicReact();
