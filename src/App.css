@@ -1,8 +1,13 @@
 /* Rebekah Reay - Student ID: K2938309 */
 
+body {
+  background-color: #cbe6f7;
+}
+
 .App {
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
+  
 }
 
 .App-header {
@@ -21,6 +26,11 @@
   height: 70vh;
   display: flex;
   flex-direction: column;
+}
+
+#home-button {
+  height: 10vh;
+  width: 20vw;
 }
 
 
