@@ -2,44 +2,21 @@
 
 import "./App.css";
 import React from "react";
-import Button from "./components/button/button-component.js";
+import Optionbuttons from "./components/option-buttons/option-buttons.js";
+import ShareBook from "./components/share-book/share-book.js";
+import FindBook from "./components/find-book/find-book.js";
 import { useState } from "react";
-
-function Homebuttons({ onClick }) {
-  return (
-    <div className="button-div">
-      <Button name="share a book" id="share-button" onClick={onClick}></Button>
-      <Button name="find a book" id="find-button" onClick={onClick}></Button>
-    </div>
-  );
-}
-
-function BookShare() {
-  return (
-    <div>
-      <p>sharing a book</p>
-    </div>
-  );
-}
-
-function FindBook() {
-  return (
-    <div>
-      <p>finding a book</p>
-    </div>
-  );
-}
 
 function App() {
   const [path, setPath] = useState("");
 
   let component =
     path === "share" ? (
-      <BookShare />
+      <ShareBook />
     ) : path === "find" ? (
       <FindBook />
     ) : (
-      <Homebuttons path={path} onClick={(e) => handleClick(e)} />
+      <Optionbuttons path={path} onClick={(e) => handleClick(e)} />
     );
 
   const handleClick = (e) => {
@@ -64,7 +41,13 @@ function App() {
       <div>
         <button
           id="home-button"
-          style={{ margin: "2px", marginBottom: "4px" }}
+          style={{
+            margin: "2px",
+            marginBottom: "4px",
+            position: "fixed",
+            bottom: "5vh",
+            left: "40%",
+          }}
           onClick={(e) => handleClick(e)}
         >
           HOME

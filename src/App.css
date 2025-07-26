@@ -21,11 +21,12 @@ body {
   color: white;
 }
 
-.button-div {
-  align-items: center;
-  height: 70vh;
+.option-buttons-div {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  height: 70vh;
+  margin-top: 5vh;
 }
 
 #home-button {
