@@ -1,18 +1,18 @@
 // Rebekah Reay - Student ID: K2938309
-
 import "./App.css";
 import React from "react";
 import Optionbuttons from "./components/option-buttons/option-buttons.js";
-import ShareBook from "./components/share-book/share-book.js";
+import SearchBook from "./components/search-book/search-book.js";
 import FindBook from "./components/find-book/find-book.js";
 import { useState } from "react";
 
+// Rebekah Reay - Student ID: K2938309
 function App() {
   const [path, setPath] = useState("");
 
   let component =
     path === "share" ? (
-      <ShareBook />
+      <SearchBook />
     ) : path === "find" ? (
       <FindBook />
     ) : (
@@ -45,7 +45,7 @@ function App() {
             margin: "2px",
             marginBottom: "4px",
             position: "fixed",
-            bottom: "5vh",
+            bottom: "0vh",
             left: "40%",
           }}
           onClick={(e) => handleClick(e)}
