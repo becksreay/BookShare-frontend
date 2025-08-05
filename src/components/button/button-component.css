@@ -8,3 +8,7 @@ button {
     font-weight: bold;
     background-color: #88d0f6;
 }
+
+button:hover {
+    background-color: #ffcc66
+}

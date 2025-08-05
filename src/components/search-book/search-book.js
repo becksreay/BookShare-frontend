@@ -10,11 +10,26 @@ export default function SearchBook() {
   const [availBooks, setAvailBooks] = useState([]);
   const [book, setBook] = useState();
   const [isBook, setIsBook] = useState();
-  const [isConfirmed, setIsConfirmed] = useState(false);
+  const [isConfirmed, setIsConfirmed] = useState();
   let testData;
   let tempBook;
 
-  // let bookComponent = isBook === true ? <Book book={book} /> : <></>;
+  let bookComponent =
+    isBook === true ? (
+      <>
+        <Book book={book} />
+        <button id="confirm-button" onClick={(e) => handleClick(e)}>
+          Yes, share this book
+        </button>
+      </>
+    ) : isBook === false ? (
+      <>
+        <p>Could not find that book</p>
+        <p>Please search again</p>
+      </>
+    ) : (
+      <></>
+    );
 
   useEffect(() => {
     console.log("availBooks changed:", availBooks);
@@ -88,20 +103,7 @@ export default function SearchBook() {
               X
             </button>
           </form>
-          {isBook ? (
-            <>
-              <Book book={book} />
-              <button id="confirm-button" onClick={(e) => handleClick(e)}>
-                Yes, share this book
-              </button>
-            </>
-          ) : (
-            <>
-              <p>Could not find that book</p>
-              <p>Please search again</p>
-            </>
-          )}
-          {/* <div>{bookComponent}</div> */}
+          <div>{bookComponent}</div>
         </div>
       )}
     </>
