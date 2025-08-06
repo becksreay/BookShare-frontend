@@ -1,0 +1,51 @@
+/* Rebekah Reay - Student ID: K2938309 */
+.share-title {
+    margin: 10px 0px;
+}
+
+#share-input {
+    border-radius: 5px;
+    border-color: black;
+}
+
+#confirm-button {
+    height: 5vh;
+    width: 45vw;
+}
+
+/* .search-form {
+    display: block;
+    align-items: end;
+} */
+
+/* ref for below styling Sanjeev and Arbel: https://stackoverflow.com/questions/16602594/position-label-on-top-of-text-area */
+#search-input {
+    display: inline-block;
+    vertical-align: top;
+}
+
+label {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+textarea { 
+    display: block;
+    margin-top: 5px;
+}
+
+.clear-input {
+    /* display: inline-block; */
+    /* vertical-align: auto; */
+    position: absolute;
+    height: auto;
+    width:auto;
+    margin: 5px;
+    margin-top: 30px;
+    /* border-radius: 10px; */
+    color: black;
+    font-weight: bold;
+    background-color: #88d0f6;
+}

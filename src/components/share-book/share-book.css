@@ -1,0 +1,88 @@
+/* Rebekah Reay - Student ID: K2938309 */
+.book-to-share {
+    display: flex;
+    justify-content: space-around;
+    margin: 0vh 5vw 5vw 5vw;
+    height: 30vh;
+}
+
+.book-image-share {
+    display: flex;
+    margin-right: 10px;
+}
+
+.book-details-share {
+    display: flex;
+    margin-right: 20px;
+}
+
+.share-form-labels {
+    display: flex;
+    margin: 10px;
+}
+
+.share-form-inputs {
+    margin: 10px;
+    height: 3vh;
+    border-color: black;
+    border-width: 3px;
+    border-radius: 10px;
+}
+
+.checkbox {
+    width: 15px;
+    height: 15px;
+    margin: 13px;
+}
+
+.share-form-select {
+    margin: 10px;
+    height: 5vh;
+    margin-top: 1px;
+    width: 65vw;
+    border-color: black;
+    border-width: 3px;
+    border-radius: 10px;
+}
+
+.share-form-select:hover {
+    background-color: #ffcc66;
+    color: #000000
+}
+
+.review-item {
+    background-color: #ffffff;
+}
+
+/* .review-item:hover {
+    background-color: orange;
+    color: #000000
+} */
+
+#next-button {
+    height: 5vh;
+    width: 20vw;
+    margin: 2%;
+    border-radius: 10px;
+    color: black;
+    font-weight: bold;
+    background-color: #88d0f6;
+}
+
+#next-button:hover {
+    background-color: #ffcc66;
+}
+
+.confirm-edit-share {
+    height: 5vh;
+    width: 20vw;
+    margin: 2%;
+    border-radius: 10px;
+    color: black;
+    font-weight: bold;
+    background-color: #88d0f6;
+}
+
+#confirm-share:hover {
+    background-color: #ffcc66;
+}

@@ -1,0 +1,17 @@
+/* Rebekah Reay - Student ID: K2938309 */
+
+.book-title {
+    font-size: 3vh;
+    font-weight: bold;
+    margin: 5px 0px;
+}
+
+.book-author {
+    font-size: 2.5vh;
+    font-weight: bold;
+    margin: 4px 0px;
+}
+
+.book-image { 
+    margin: 4px 0px;
+}
