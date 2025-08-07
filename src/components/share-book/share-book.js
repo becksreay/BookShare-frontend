@@ -6,6 +6,8 @@ import BookDetails from "../book/book-details";
 import BookImage from "../book/book-image";
 import ShareForm from "./share-form";
 
+const backendUrl = process.env.REACT_APP_DJANGO_BACKEND_URL;
+
 function ShareSuccess() {
   return (
     <>
@@ -30,7 +32,7 @@ function ReviewSelection({
     e.preventDefault();
     setShareClicked(true);
 
-    fetch("http://127.0.0.1:8000/api/books/create/", {
+    fetch(`${backendUrl}/api/books/create/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
