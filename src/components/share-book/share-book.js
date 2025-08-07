@@ -14,15 +14,39 @@ function ShareSuccess() {
   );
 }
 
-function ReviewSelection({ userSelection, setShareClicked, setNextIsClicked }) {
+function ReviewSelection({
+  userSelection,
+  setShareClicked,
+  setNextIsClicked,
+  book,
+}) {
   function handleEditClick(e) {
     // console.log("edit clicked!");
     setNextIsClicked(false);
   }
 
   function handleShareClick(e) {
-    // console.log("share clicked!!");
+    console.log("share clicked!!");
+    e.preventDefault();
     setShareClicked(true);
+
+    fetch("http://127.0.0.1:8000/api/books/create/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        title: book.title,
+        author: book.author,
+        cover: book.cover,
+        rating: userSelection.rating,
+        review: userSelection.review,
+        swapspot: userSelection.swapSpot,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => console.log("Book saved:", data))
+      .catch((error) => console.error("Error:", error));
   }
 
   return (
@@ -103,6 +127,7 @@ export default function ShareBook({ book }) {
               userSelection={formInput}
               setShareClicked={setShareClicked}
               setNextIsClicked={setNextIsClicked}
+              book={book}
             />
           ) : (
             <ShareForm saveData={saveData} />
