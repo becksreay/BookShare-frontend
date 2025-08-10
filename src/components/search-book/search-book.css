@@ -36,6 +36,11 @@ textarea {
     margin-top: 5px;
 }
 
+#share-input {
+    display: block;
+    margin-top: 5px;
+}
+
 .clear-input {
     /* display: inline-block; */
     /* vertical-align: auto; */

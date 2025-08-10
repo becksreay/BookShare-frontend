@@ -20,7 +20,7 @@ export default function ShareForm({ saveData }) {
     "Swap Spot 4",
     "Swap Spot 5",
   ];
-
+  // Rebekah Reay - Student ID: K2938309
   return (
     <>
       <form action={saveData}>
@@ -50,7 +50,12 @@ export default function ShareForm({ saveData }) {
         <label className="share-form-labels" htmlFor="review">
           Review the book
         </label>
-        <select className="share-form-select" id="review" name="review">
+        <select
+          className="share-form-select"
+          id="review"
+          name="review"
+          required
+        >
           {reviews.map((review, i) => (
             <option key={`review${i}`} className="review-item">
               {review}
@@ -62,7 +67,12 @@ export default function ShareForm({ saveData }) {
         <label className="share-form-labels" htmlFor="swap-spot">
           Select a swap spot
         </label>
-        <select className="share-form-select" id="swap-spot" name="swap-spot">
+        <select
+          className="share-form-select"
+          id="swap-spot"
+          name="swap-spot"
+          required
+        >
           {swapSpots.map((swapSpot) => (
             <option key={swapSpot} value={swapSpot}>
               {swapSpot}

@@ -40,39 +40,40 @@ export default function SearchBook() {
   }, [book]);
 
   const handleInput = (e) => {
+    e.preventDefault();
     let coreUrl = "https://openlibrary.org/search.json?title=";
     // let testUrl = "https://openlibrary.org/api/books?bibkeys=";
 
     let url = coreUrl + query;
-    if (e.key === "Enter") {
-      const headers = new Headers({
-        "User-Agent": "BookShare/prototype (becksreay@gmail.com)",
-      });
-      const options = {
-        method: "GET",
-        headers: headers,
-      };
-      fetch(url, options)
-        .then((response) => response.json())
-        .then((data) => {
-          testData = data.docs[0];
-          console.log("test data", testData);
-          if (testData) {
-            tempBook = {
-              author: testData.author_name[0],
-              title: testData.title,
-              cover: testData.cover_i,
-            };
-            setBook(tempBook);
-            setIsBook(true);
-            setAvailBooks((prev) => [...prev, tempBook]);
-          } else {
-            console.log("no test data");
-            setIsBook(false);
-          }
-        })
-        .catch((error) => console.error("Error:", error));
-    }
+    // if (e.key === "Enter") {
+    const headers = new Headers({
+      "User-Agent": "BookShare/prototype (becksreay@gmail.com)",
+    });
+    const options = {
+      method: "GET",
+      headers: headers,
+    };
+    fetch(url, options)
+      .then((response) => response.json())
+      .then((data) => {
+        testData = data.docs[0];
+        console.log("test data", testData);
+        if (testData) {
+          tempBook = {
+            author: testData.author_name[0],
+            title: testData.title,
+            cover: testData.cover_i,
+          };
+          setBook(tempBook);
+          setIsBook(true);
+          setAvailBooks((prev) => [...prev, tempBook]);
+        } else {
+          console.log("no test data");
+          setIsBook(false);
+        }
+      })
+      .catch((error) => console.error("Error:", error));
+    // }
   };
 
   function handleClick(e) {
@@ -86,22 +87,29 @@ export default function SearchBook() {
       ) : (
         <div>
           <h1 className="share-title">Share a book</h1>
-          <form className="share-form">
+          <form className="share-form" onSubmit={handleInput}>
             <div id="search-input">
               <label htmlFor="share-input">
                 Enter book title
-                <textarea
+                {/* <textarea
                   id="share-input"
                   name="share-input"
                   placeholder="search..."
                   onChange={(e) => setQuery(e.target.value)}
                   onKeyDown={handleInput}
-                ></textarea>
+                ></textarea> */}
+                <input
+                  type="search"
+                  id="share-input"
+                  name="share-input"
+                  placeholder="search..."
+                  onChange={(e) => setQuery(e.target.value)}
+                ></input>
               </label>
+              <button className="inputs" type="submit">
+                Search
+              </button>
             </div>
-            <button type="reset" className="clear-input">
-              X
-            </button>
           </form>
           <div>{bookComponent}</div>
         </div>

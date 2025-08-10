@@ -1,1 +1,30 @@
 /* Rebekah Reay - Student ID: K2938309 */
+form button{
+    height: 5vh;
+    width: 25vw;
+}
+
+#search-inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.book-to-share {
+    display: flex;
+    justify-content: space-around;
+    margin: 0vh 5vw 5vw 5vw;
+    height: 30vh;
+    border: 2px solid #0a5d8a;
+    border-radius: 10px;
+    padding: 3px;
+}
+
+.book-image-share {
+    display: flex;
+    margin-right: 10px;
+}
+
+.book-details-share {
+    display: flex;
+    margin-right: 20px;
+}
