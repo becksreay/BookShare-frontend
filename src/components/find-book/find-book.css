@@ -28,3 +28,17 @@ form button{
     display: flex;
     margin-right: 20px;
 }
+
+.reserve-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.name-input-div {
+    margin: 0vh 5vw 5vw 5vw;
+}
+
+.name-input {
+    display: flex;
+    margin: 0vh 5vw 5vw 5vw;    
+}
