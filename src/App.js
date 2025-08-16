@@ -34,8 +34,15 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1 style={{ margin: "2px", marginTop: "4px" }}>BookShare</h1>
-        <p style={{ margin: "2px", marginBottom: "4px" }}>R Reay K2938309</p>
+        <h1 style={{ margin: "2px", marginTop: "4px" }} title="BookShare">
+          BookShare
+        </h1>
+        <p
+          style={{ margin: "2px", marginBottom: "4px" }}
+          title="Student R Reay"
+        >
+          R Reay K2938309
+        </p>
       </header>
       <div>{component}</div>
       <div>
@@ -49,6 +56,7 @@ function App() {
             left: "40%",
           }}
           onClick={(e) => handleClick(e)}
+          title="home button"
         >
           HOME
         </button>
@@ -58,16 +66,3 @@ function App() {
 }
 
 export default App;
-
-// ionic imports and stuff
-// import "@ionic/react/css/core.css";
-// import { setupIonicReact } from "@ionic/react";
-// import { IonButton } from "@ionic/react";
-
-/* Basic CSS for apps built with Ionic */
-// import "@ionic/react/css/normalize.css";
-// import "@ionic/react/css/structure.css";
-// import "@ionic/react/css/typography.css";
-
-// setupIonicReact();
-// import Footer from "./components/footer/footer-component.js";

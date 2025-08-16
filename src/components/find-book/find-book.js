@@ -24,6 +24,7 @@ export default function FindBook() {
     "Swap Spot 5",
   ];
 
+  // Rebekah Reay - Student ID: K2938309
   function handleSubmit(e) {
     e.preventDefault();
     let formData = new FormData(e.currentTarget);
@@ -60,13 +61,16 @@ export default function FindBook() {
     setIsDataBack(false);
   }
 
+  // Rebekah Reay - Student ID: K2938309
   return (
     <div>
       {!isBookSelected ? (
         <>
-          <h2>Find available books</h2>
+          <h2 title="Find available books">Find available books</h2>
           <form onSubmit={handleSubmit}>
-            <button onClick={handleSeeAll}>See all</button>
+            <button onClick={handleSeeAll} title="see all button">
+              See all
+            </button>
             <label>
               <div id="search-inputs">
                 <label htmlFor="search-title"></label>
@@ -75,6 +79,7 @@ export default function FindBook() {
                   id="search-title"
                   name="title"
                   placeholder="search by title"
+                  title="search by title input"
                 ></input>
                 <br></br>
                 <label htmlFor="search-author"></label>
@@ -83,6 +88,7 @@ export default function FindBook() {
                   id="search-author"
                   name="author"
                   placeholder="search by author"
+                  title="search by author input"
                 ></input>
                 <br></br>
                 <label htmlFor="search-swapspot"></label>
@@ -91,18 +97,27 @@ export default function FindBook() {
                   id="search-swapspot"
                   name="swapspot"
                   placeholder="search by swap spot"
+                  title="search by swap spot input"
                 >
                   {swapSpots.map((swapSpot) => (
-                    <option key={swapSpot} value={swapSpot}>
+                    <option
+                      key={swapSpot}
+                      value={swapSpot}
+                      title={`${swapSpot}`}
+                    >
                       {swapSpot}
                     </option>
                   ))}
                 </select>
               </div>
-              <button type="reset" onClick={clearResults}>
+              <button
+                type="reset"
+                onClick={clearResults}
+                title="clear all button"
+              >
                 Clear all
               </button>
-              <button className="inputs" type="submit">
+              <button className="inputs" type="submit" title="search button">
                 Search
               </button>
             </label>
@@ -123,3 +138,4 @@ export default function FindBook() {
     </div>
   );
 }
+// Rebekah Reay - Student ID: K2938309

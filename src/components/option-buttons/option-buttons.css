@@ -8,3 +8,14 @@
     font-weight: bold;
     background-color: #88d0f6;
 } */
+
+/* Rebekah Reay - Student ID: K2938309 */
+.option-buttons:hover {
+  background-color: #ffcc66;
+}
+
+.option-buttons:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  background-color: #ffcc66;
+}
