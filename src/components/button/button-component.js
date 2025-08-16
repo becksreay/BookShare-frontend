@@ -5,7 +5,12 @@ import "./button-component.css";
 
 export default function Button({ name, onClick, id }) {
   return (
-    <button id={id} style={{ fontSize: "20px" }} onClick={onClick}>
+    <button
+      id={id}
+      style={{ fontSize: "20px" }}
+      onClick={onClick}
+      title={`${name} button`}
+    >
       {name}
     </button>
   );

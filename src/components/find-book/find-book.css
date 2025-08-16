@@ -1,44 +1,55 @@
 /* Rebekah Reay - Student ID: K2938309 */
-form button{
-    height: 5vh;
-    width: 25vw;
+form button {
+  height: 5vh;
+  width: 25vw;
 }
 
 #search-inputs {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .book-to-share {
-    display: flex;
-    justify-content: space-around;
-    margin: 0vh 5vw 5vw 5vw;
-    height: 30vh;
-    border: 2px solid #0a5d8a;
-    border-radius: 10px;
-    padding: 3px;
+  display: flex;
+  justify-content: space-around;
+  margin: 0vh 5vw 5vw 5vw;
+  height: 30vh;
+  border: 2px solid #0a5d8a;
+  border-radius: 10px;
+  padding: 3px;
 }
 
 .book-image-share {
-    display: flex;
-    margin-right: 10px;
+  display: flex;
+  margin-right: 10px;
 }
 
 .book-details-share {
-    display: flex;
-    margin-right: 20px;
+  display: flex;
+  margin-right: 20px;
 }
 
-.reserve-form{
-    display: flex;
-    flex-direction: column;
+.reserve-form {
+  display: flex;
+  flex-direction: column;
 }
 
 .name-input-div {
-    margin: 0vh 5vw 5vw 5vw;
+  margin: 0vh 5vw 5vw 5vw;
 }
 
 .name-input {
-    display: flex;
-    margin: 0vh 5vw 5vw 5vw;    
+  display: flex;
+  margin: 0vh 5vw 5vw 5vw;
+}
+
+/* Rebekah Reay - Student ID: K2938309 */
+.confirm-edit-share:hover {
+  background-color: #ffcc66;
+}
+
+.confirm-edit-share:active {
+  background-color: #ffcc66;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }

@@ -11,12 +11,14 @@ export default function Optionbuttons({ onClick }) {
         name="share a book"
         id="share-button"
         onClick={onClick}
+        title="share a book button"
       ></Button>
       <Button
         className="option-buttons"
         name="find a book"
         id="find-button"
         onClick={onClick}
+        title="find a book button"
       ></Button>
     </div>
   );

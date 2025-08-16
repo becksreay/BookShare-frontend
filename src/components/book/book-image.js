@@ -7,7 +7,7 @@ export default function BookImage({ book }) {
   let coverUrl = `https://covers.openlibrary.org/a/id/${book.cover}-M.jpg`;
   return (
     <>
-      <img src={coverUrl} className="book-image"></img>
+      <img src={coverUrl} className="book-image" title="book cover"></img>
     </>
   );
 }

@@ -18,13 +18,17 @@ export default function SearchBook() {
     isBook === true ? (
       <>
         <Book book={book} />
-        <button id="confirm-button" onClick={(e) => handleClick(e)}>
+        <button
+          id="confirm-button"
+          onClick={(e) => handleClick(e)}
+          title="confirm button"
+        >
           Yes, share this book
         </button>
       </>
     ) : isBook === false ? (
       <>
-        <p>Could not find that book</p>
+        <p title="book not found">Could not find that book</p>
         <p>Please search again</p>
       </>
     ) : (
@@ -73,7 +77,6 @@ export default function SearchBook() {
         }
       })
       .catch((error) => console.error("Error:", error));
-    // }
   };
 
   function handleClick(e) {
@@ -86,27 +89,24 @@ export default function SearchBook() {
         <ShareBook book={book} />
       ) : (
         <div>
-          <h1 className="share-title">Share a book</h1>
+          <h1 className="share-title" title="share a book">
+            Share a book
+          </h1>
           <form className="share-form" onSubmit={handleInput}>
             <div id="search-input">
               <label htmlFor="share-input">
                 Enter book title
-                {/* <textarea
-                  id="share-input"
-                  name="share-input"
-                  placeholder="search..."
-                  onChange={(e) => setQuery(e.target.value)}
-                  onKeyDown={handleInput}
-                ></textarea> */}
                 <input
                   type="search"
                   id="share-input"
                   name="share-input"
                   placeholder="search..."
                   onChange={(e) => setQuery(e.target.value)}
+                  required
+                  title="input book title"
                 ></input>
               </label>
-              <button className="inputs" type="submit">
+              <button className="inputs" type="submit" title="search button">
                 Search
               </button>
             </div>

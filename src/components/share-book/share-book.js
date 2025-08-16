@@ -5,13 +5,14 @@ import { useState } from "react";
 import BookDetails from "../book/book-details";
 import BookImage from "../book/book-image";
 import ShareForm from "./share-form";
+import SearchBook from "../search-book/search-book";
 
 const backendUrl = process.env.REACT_APP_DJANGO_BACKEND_URL;
 
 function ShareSuccess() {
   return (
     <>
-      <h1>Book shared successfully!</h1>
+      <h1 title="Book shared successfully">Book shared successfully!</h1>
     </>
   );
 }
@@ -23,14 +24,13 @@ function ReviewSelection({
   book,
 }) {
   function handleEditClick(e) {
-    // console.log("edit clicked!");
     setNextIsClicked(false);
   }
 
+  // Rebekah Reay - Student ID: K2938309
   function handleShareClick(e) {
     console.log("share clicked!!");
     e.preventDefault();
-    setShareClicked(true);
 
     fetch(`${backendUrl}/api/books/create/`, {
       method: "POST",
@@ -47,26 +47,33 @@ function ReviewSelection({
       }),
     })
       .then((response) => response.json())
-      .then((data) => console.log("Book saved:", data))
+      .then((data) => {
+        console.log("Book saved:", data);
+        setShareClicked(true);
+      })
       .catch((error) => console.error("Error:", error));
   }
 
   return (
     <>
       <br></br>
-      <h4>You rated this book {userSelection.rating}/5</h4>
-      <h4>Your review: "{userSelection.review}"</h4>
-      <h4>You'll drop it off at {userSelection.swapSpot}</h4>
+      <h4 title="your rating">You rated this book {userSelection.rating}/5</h4>
+      <h4 title="your review">Your review: "{userSelection.review}"</h4>
+      <h4 title="your chosen swap spot">
+        You'll drop it off at {userSelection.swapSpot}
+      </h4>
       <br></br>
       <button
         className="confirm-edit-share"
         onClick={(e) => handleEditClick(e)}
+        title="edit button"
       >
         Edit
       </button>
       <button
         className="confirm-edit-share"
         onClick={(e) => handleShareClick(e)}
+        title="share button"
       >
         Share!
       </button>
@@ -78,7 +85,7 @@ export default function ShareBook({ book }) {
   const [formInput, setFormInput] = useState();
   const [nextIsClicked, setNextIsClicked] = useState(false);
   const [shareClicked, setShareClicked] = useState();
-  //   const [listings, setListings] = useState([]);
+  const [isBackClicked, setIsBackClicked] = useState();
 
   function saveData(formData) {
     let userInput = {
@@ -93,49 +100,51 @@ export default function ShareBook({ book }) {
     setNextIsClicked(true);
   }
 
-  //   useEffect(() => {
-  //     setListings([...listings, { book: book, formInput: formInput }]);
-  //     console.log("listings", listings);
-  //   }, [listings]);
-
-  //   if (shareClicked) {
-  //     setListings([...listings, { book: book, formInput: formInput }]);
-  //     console.log("listings", listings);
-  //   }
-
-  return (
-    <>
-      {shareClicked ? (
+  let shareComponent =
+    isBackClicked === true ? (
+      <>
+        <SearchBook />
+      </>
+    ) : shareClicked === true ? (
+      <>
         <ShareSuccess />
-      ) : (
-        <>
-          <p
-            style={{
-              margin: "10px 0px",
-              fontWeight: "bold",
-              backgroundColor: "#ffff66",
-            }}
-          >
-            {nextIsClicked ? "Review your selection" : "You are sharing: "}
-          </p>
-          <div className="book-to-share">
-            <BookImage className="book-image-share" book={book} />
-            <div className="book-details-share">
-              <BookDetails book={book} />
-            </div>
+      </>
+    ) : (
+      <>
+        <p
+          style={{
+            margin: "10px 0px",
+            fontWeight: "bold",
+            backgroundColor: "#ffff66",
+          }}
+        >
+          {nextIsClicked ? "Review your selection" : "You are sharing: "}
+        </p>
+        <div
+          className="book-to-share"
+          title={`select ${book.title} by ${book.author}`}
+        >
+          <BookImage className="book-image-share" book={book} />
+          <div className="book-details-share">
+            <BookDetails book={book} />
           </div>
-          {nextIsClicked ? (
-            <ReviewSelection
-              userSelection={formInput}
-              setShareClicked={setShareClicked}
-              setNextIsClicked={setNextIsClicked}
-              book={book}
+        </div>
+        {nextIsClicked ? (
+          <ReviewSelection
+            userSelection={formInput}
+            setShareClicked={setShareClicked}
+            setNextIsClicked={setNextIsClicked}
+            book={book}
+          />
+        ) : (
+          <>
+            <ShareForm
+              saveData={saveData}
+              setIsBackClicked={setIsBackClicked}
             />
-          ) : (
-            <ShareForm saveData={saveData} />
-          )}
-        </>
-      )}
-    </>
-  );
+          </>
+        )}
+      </>
+    );
+  return <div>{shareComponent}</div>;
 }

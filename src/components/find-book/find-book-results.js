@@ -29,6 +29,7 @@ export default function BookResults({
                 className="book-to-share"
                 onClick={() => handleBookSelection(book)}
                 key={i}
+                title={`select ${book.title} by ${book.author}`}
               >
                 <BookImage className="book-image-share" book={book} />
                 <div className="book-details-share">

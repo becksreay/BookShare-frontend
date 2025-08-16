@@ -18,6 +18,7 @@ export default function ReviewFindSelection({ bookSelected }) {
     console.log("back clicked!");
   }
 
+  // Rebekah Reay - Student ID: K2938309
   function handleReserveClick(e) {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -46,11 +47,12 @@ export default function ReviewFindSelection({ bookSelected }) {
 
     return (
       <>
-        <h1>Book reserved successfully!</h1>
+        <h1 title="book reserved successfully">Book reserved successfully!</h1>
       </>
     );
   }
 
+  // Rebekah Reay - Student ID: K2938309
   let component =
     isBack === true ? (
       <>
@@ -66,17 +68,23 @@ export default function ReviewFindSelection({ bookSelected }) {
             fontWeight: "bold",
             backgroundColor: "#ffff66",
           }}
+          title="review your selection"
         >
           Review your selection
         </p>
         <>
-          <div className="book-to-share">
+          <div
+            className="book-to-share"
+            title={`select ${bookSelected.title} by ${bookSelected.author}`}
+          >
             <BookImage className="book-image-share" book={bookSelected} />
             <div className="book-details-share">
               <BookDetails book={bookSelected} />
             </div>
           </div>
-          <h4>You'll pick it up from {bookSelected.swapspot}</h4>
+          <h4 title={`pick up from ${bookSelected.swapspot}`}>
+            You'll pick it up from {bookSelected.swapspot}
+          </h4>
           <br></br>
           <div className="reserve-form">
             <form onSubmit={handleReserveClick}>
@@ -90,12 +98,14 @@ export default function ReviewFindSelection({ bookSelected }) {
                   name="name-input"
                   placeholder="Enter your name"
                   required
+                  title="enter your name"
                 ></input>
               </div>
               <div>
                 <button
                   className="confirm-edit-share"
                   onClick={handleBackClick}
+                  title="back button"
                 >
                   Back
                 </button>
@@ -105,6 +115,7 @@ export default function ReviewFindSelection({ bookSelected }) {
                   className="confirm-edit-share"
                   value="Reserve!"
                   name="name-submit"
+                  title="reserve button"
                 ></input>
               </div>
             </form>
