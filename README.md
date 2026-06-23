@@ -15,9 +15,11 @@ React, JSX, REST API integration
 
 ## Example UI
 **Homepage**
+
 <img width="385" height="695" alt="image" src="https://github.com/user-attachments/assets/5719c896-e295-4c3d-a424-9436a40b08b9" />
 
 **Search result**
+
 <img width="372" height="682" alt="image" src="https://github.com/user-attachments/assets/1840f2fc-2f81-49f2-90f9-4b2bfdf52e27" />
 
 Backend repository: [https://github.com/becksreay/BookShare-backend](https://github.com/becksreay/BookShare-backend)
